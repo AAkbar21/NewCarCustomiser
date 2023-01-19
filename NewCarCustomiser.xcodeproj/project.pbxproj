@@ -14,6 +14,8 @@
 		6AC7C8A32979AF1100FCB132 /* NewCarCustomiserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC7C8A22979AF1100FCB132 /* NewCarCustomiserTests.swift */; };
 		6AC7C8AD2979AF1100FCB132 /* NewCarCustomiserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC7C8AC2979AF1100FCB132 /* NewCarCustomiserUITests.swift */; };
 		6AC7C8AF2979AF1100FCB132 /* NewCarCustomiserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC7C8AE2979AF1100FCB132 /* NewCarCustomiserUITestsLaunchTests.swift */; };
+		6AC7C8BC2979AFD700FCB132 /* Cars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC7C8BB2979AFD700FCB132 /* Cars.swift */; };
+		6AC7C8C02979B09100FCB132 /* StarterCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC7C8BF2979B09100FCB132 /* StarterCars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		6AC7C8A82979AF1100FCB132 /* NewCarCustomiserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewCarCustomiserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC7C8AC2979AF1100FCB132 /* NewCarCustomiserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarCustomiserUITests.swift; sourceTree = "<group>"; };
 		6AC7C8AE2979AF1100FCB132 /* NewCarCustomiserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarCustomiserUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6AC7C8BB2979AFD700FCB132 /* Cars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cars.swift; sourceTree = "<group>"; };
+		6AC7C8BF2979B09100FCB132 /* StarterCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterCars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				6AC7C8932979AF1000FCB132 /* ContentView.swift */,
 				6AC7C8952979AF1100FCB132 /* Assets.xcassets */,
 				6AC7C8972979AF1100FCB132 /* Preview Content */,
+				6AC7C8BB2979AFD700FCB132 /* Cars.swift */,
+				6AC7C8BF2979B09100FCB132 /* StarterCars.swift */,
 			);
 			path = NewCarCustomiser;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AC7C8942979AF1000FCB132 /* ContentView.swift in Sources */,
+				6AC7C8BC2979AFD700FCB132 /* Cars.swift in Sources */,
+				6AC7C8C02979B09100FCB132 /* StarterCars.swift in Sources */,
 				6AC7C8922979AF1000FCB132 /* NewCarCustomiserApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
