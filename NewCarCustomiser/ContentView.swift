@@ -23,6 +23,7 @@ struct ContentView: View {
     @State private var enginePackage = false
     @State private var NOSPackage = false
     @State private var remainingFunds = 1000
+    @State private var remainingTime = 30
     
     var exhaustPackageEnabled: Bool {
         return exhaustPackage ? true: remainingFunds >= 500 ? true: false
@@ -38,8 +39,9 @@ struct ContentView: View {
     
     var NOSPackageEnabled: Bool {
         return NOSPackage ? true: remainingFunds >= 1000 ? true: false
-
     }
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
 
 
@@ -106,30 +108,38 @@ struct ContentView: View {
             )
             
             
-            
-        Form {
-            VStack(alignment: .leading, spacing: 20) {
-                Text(starterCars.cars[selectedCar].displayStats())
-                Button("Next Car", action: {
-                    selectedCar += 1
-                    resetDisplay()
-                })
+        VStack {
+            Text("\(remainingTime)")
+                .onReceive(timer) {_ in
+                    if self.remainingTime > 0 {
+                        self.remainingTime -= 0
+                        }
+                    }
+                            .foregroundColor(.red)
+            Form {
+                VStack(alignment: .leading, spacing: 20) {
+                    Text(starterCars.cars[selectedCar].displayStats())
+                    Button("Next Car", action: {
+                        selectedCar += 1
+                        resetDisplay()
+                    })
+                }
+                Section {
+                    Toggle("Exhaust Package (Cost: 500)", isOn: exhaustPackageBinding)
+                        .disabled(!exhaustPackageEnabled)
+                    Toggle("Tires Package (Cost: 500)", isOn: tiresPackageBinding)
+                        .disabled(!exhaustPackageEnabled)
+                    Toggle("Engine Package (Cost: 500)", isOn: enginePackageBinding)
+                        .disabled(!enginePackageEnabled)
+                    Toggle("NOS Package (Cost: 1000)", isOn: NOSPackageBinding)
+                        .disabled(!NOSPackageEnabled)
+                }
             }
-            Section {
-                Toggle("Exhaust Package (Cost: 500)", isOn: exhaustPackageBinding)
-                    .disabled(!exhaustPackageEnabled)
-                Toggle("Tires Package (Cost: 500)", isOn: tiresPackageBinding)
-                    .disabled(!exhaustPackageEnabled)
-                Toggle("Engine Package (Cost: 500)", isOn: enginePackageBinding)
-                    .disabled(!enginePackageEnabled)
-                Toggle("NOS Package (Cost: 1000)", isOn: NOSPackageBinding)
-                    .disabled(!NOSPackageEnabled)
-            }
-        }
-        Text("Remaining Funds: \(remainingFunds)")
-            .foregroundColor(.red)
-            .baselineOffset(20)
+            Text("Remaining Funds: \(remainingFunds)")
+                .foregroundColor(.red)
+                .baselineOffset(20)
     }
+        
     func resetDisplay() {
         remainingFunds = 1000
         exhaustPackage = false
@@ -152,3 +162,4 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+}
